@@ -1,0 +1,15 @@
+{% extends 'tasks/home.html' %}
+{% block content %}
+<div class="smaller-container text-muted">
+    <h3 class="display-5 text-muted">Update "{{task.title}}"</h3>
+    
+    <form action="" method="POST" class="post-form">
+        {% csrf_token %}
+        <span>{{ form.title.label }}</span>
+        {{form.title}}
+        <span>{{ form.completed.label }}</span>
+        {{form.completed}}
+        <input type="submit" value="Update" class="btn btn-warning btn-block">
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'tasks/home.html' %}
+{% block content %}
+<div class="smaller-container text-muted">
+    <p class="lead">Are you sure you want to delete "{{task}}" ?</p>
+    <div class="row">
+        <div class="col-1 me-2">
+            <a href="/" class="btn btn-outline-secondary btn-sm">Cancel</a>
+        </div>
+        <div class="col-1">
+            <form action="" method="post">
+                {% csrf_token %}
+                <input type="submit" value="Delete" class="btn btn-outline-danger btn-sm">
+            </form>
+        </div>
+    </div>
+    <!-- <div class="d-inline">
+        <form action="" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Delete" class="btn btn-sm btn-outline-danger">
+        </form>
+    </div> -->
+</div>
+{% endblock %}
